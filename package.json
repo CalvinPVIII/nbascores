@@ -1,0 +1,19 @@
+{
+  "name": "nbascores",
+  "version": "1.0.0",
+  "description": "box score scraper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CalvinPVIII/nbascores.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CalvinPVIII/nbascores/issues"
+  },
+  "homepage": "https://github.com/CalvinPVIII/nbascores#readme"
+}
