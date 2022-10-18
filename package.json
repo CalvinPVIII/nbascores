@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/CalvinPVIII/nbascores/issues"
   },
-  "homepage": "https://github.com/CalvinPVIII/nbascores#readme"
+  "homepage": "https://github.com/CalvinPVIII/nbascores#readme",
+  "dependencies": {
+    "jsdom": "^20.0.1"
+  }
 }
