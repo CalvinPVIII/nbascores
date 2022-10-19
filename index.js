@@ -1,24 +1,24 @@
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
+const axios = require("axios");
+const cheerio = require("cheerio");
 
 const getData = (link) => {
   try {
-    JSDOM.fromURL(link).then((dom) => {
-      const boxScore = JSON.parse(
-        dom.window.document.querySelector("#__NEXT_DATA__").innerHTML
-      ).props.pageProps.game;
+    axios.get(link).then((response) => {
+      const $ = cheerio.load(response.data);
+      const data = $("#__NEXT_DATA__").html();
+      const boxScore = JSON.parse(data).props.pageProps.game;
       let blazers;
       if (boxScore.homeTeam.teamName === "Trail Blazers") {
         blazers = boxScore.homeTeam;
       } else {
         blazers = boxScore.awayTeam;
       }
-      const players = blazers.players;
-      console.log(players);
+
+      return blazers.players;
     });
   } catch {
     console.log("error");
   }
 };
 
-getData("https://www.nba.com/game/mra-vs-por-0012200027/box-score#box-score");
+getData("https://www.nba.com/game/por-vs-gsw-0012200051/box-score");
